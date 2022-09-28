@@ -1,51 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Belajar Form Validation</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="container">
-        <form name="formPendaftaran" action="daftar.php" method="post" onsubmit="return validateForm()">
-            <div class="form-group">
-                <label>Nama</label>
-                <input type="text" name="nama" placeholder="Nama lengkap" class="form-control" required maxlength="40" minlength="3">
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="Email Aktif" class="form-control">
-                <small id="emailHelp" class="form-text text-muted">Email Akan Digunakan Untuk Mengirimkan Notifikasi.</small>
-            </div>
-            <div class="form-group">
-                <label>Jurusan</label>
-                <select name="jurusan" class="form-control">
-                        <option value="0">Pilih Jurusan</option>
-                        <option value="1">Jurusan Informatika</option>
-                        <option value="2">Jurusan Teknik Komputer Jaringan</option>
-                        <option value="3">Jurusan Multimedia</option>
-                    </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="main">
+        <form method="dialog" id="form" action="youtube.com">
+            <h1>Pendaftaran Kost</h1><br><br>
+            <input type="text" id="nama" placeholder="Nama" class='input-box' required><br><br><br>
+            <input type="text" id="nim" class='input-box' placeholder="NIM" required><br><br><br>
+            <input type="text" id="handphone" class='input-box' placeholder="No Handphone" required><br><br><br>
+            <input type="email" id="email" class='input-box' placeholder="E-mail" required><br><br><br>
+            <textarea id="alamat" name="alamat" rows="4" cols="50" style="resize: none;" placeholder="Alamat" required></textarea><br><br>
+            <input type="submit" value="Simpan" id="button">
         </form>
     </div>
-    <script>
-        function validateForm() {
-            if (document.forms["formPendaftaran"]["nama"].value == "") {
-                alert("Nama Tidak Boleh Kosong");
-                document.forms["formPendaftaran"]["nama"].focus();
-                return false;
-            }
-            if (document.forms["formPendaftaran"]["email"].value == "") {
-                alert("Email Tidak Boleh Kosong");
-                document.forms["formPendaftaran"]["email"].focus();
-                return false;
-            }
-            if (document.forms["formPendaftaran"]["jurusan"].selectedIndex < 1) {
-                alert("Pilih Jurusan.");
-                document.forms["formPendaftaran"]["jurusan"].focus();
-                return false;
-            }
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
